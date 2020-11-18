@@ -1,0 +1,342 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EE2960D2238547B400CC438C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2960D1238547B400CC438C /* AppDelegate.swift */; };
+		EE2960D4238547B400CC438C /* MergeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2960D3238547B400CC438C /* MergeViewController.swift */; };
+		EE2960D6238547B400CC438C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE2960D5238547B400CC438C /* Assets.xcassets */; };
+		EE2960D9238547B400CC438C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2960D7238547B400CC438C /* Main.storyboard */; };
+		EE2ADC8023893B9D008E3241 /* NSImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2ADC7F23893B9D008E3241 /* NSImageExtension.swift */; };
+		EE33CE732386864E00429345 /* SplitWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33CE722386864E00429345 /* SplitWindowController.swift */; };
+		EE3BBF0E238636A5009FE374 /* MergeWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3BBF0D238636A5009FE374 /* MergeWindowController.swift */; };
+		EE3BBF142386494B009FE374 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3BBF132386494B009FE374 /* SplitViewController.swift */; };
+		EEAEC06F238741490044F1F7 /* ReadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAEC06E238741490044F1F7 /* ReadOperation.swift */; };
+		EEAEC07123875E500044F1F7 /* CustomRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAEC07023875E500044F1F7 /* CustomRecord.swift */; };
+		EEEBB900252FDA1C00A53084 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEBB8FF252FDA1C00A53084 /* Extensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EE2960CE238547B400CC438C /* SplitMerge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitMerge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE2960D1238547B400CC438C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EE2960D3238547B400CC438C /* MergeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeViewController.swift; sourceTree = "<group>"; };
+		EE2960D5238547B400CC438C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE2960D8238547B400CC438C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EE2960DA238547B400CC438C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE2ADC7F23893B9D008E3241 /* NSImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSImageExtension.swift; sourceTree = "<group>"; };
+		EE33CE722386864E00429345 /* SplitWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitWindowController.swift; sourceTree = "<group>"; };
+		EE3BBF0D238636A5009FE374 /* MergeWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MergeWindowController.swift; sourceTree = "<group>"; };
+		EE3BBF132386494B009FE374 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		EEAEC06E238741490044F1F7 /* ReadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadOperation.swift; sourceTree = "<group>"; };
+		EEAEC07023875E500044F1F7 /* CustomRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRecord.swift; sourceTree = "<group>"; };
+		EEEBB8FF252FDA1C00A53084 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = SplitMerge/Extensions.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EE2960CB238547B400CC438C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EE2960C5238547B400CC438C = {
+			isa = PBXGroup;
+			children = (
+				EEEBB8FF252FDA1C00A53084 /* Extensions.swift */,
+				EE2960D0238547B400CC438C /* SplitMerge */,
+				EE2960CF238547B400CC438C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EE2960CF238547B400CC438C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE2960CE238547B400CC438C /* SplitMerge.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE2960D0238547B400CC438C /* SplitMerge */ = {
+			isa = PBXGroup;
+			children = (
+				EE2960D1238547B400CC438C /* AppDelegate.swift */,
+				EEAEC07023875E500044F1F7 /* CustomRecord.swift */,
+				EE2960D3238547B400CC438C /* MergeViewController.swift */,
+				EE3BBF0D238636A5009FE374 /* MergeWindowController.swift */,
+				EE2ADC7F23893B9D008E3241 /* NSImageExtension.swift */,
+				EEAEC06E238741490044F1F7 /* ReadOperation.swift */,
+				EE3BBF132386494B009FE374 /* SplitViewController.swift */,
+				EE33CE722386864E00429345 /* SplitWindowController.swift */,
+				EE2960D5238547B400CC438C /* Assets.xcassets */,
+				EE2960D7238547B400CC438C /* Main.storyboard */,
+				EE2960DA238547B400CC438C /* Info.plist */,
+			);
+			path = SplitMerge;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE2960CD238547B400CC438C /* SplitMerge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE2960DD238547B400CC438C /* Build configuration list for PBXNativeTarget "SplitMerge" */;
+			buildPhases = (
+				EE2960CA238547B400CC438C /* Sources */,
+				EE2960CB238547B400CC438C /* Frameworks */,
+				EE2960CC238547B400CC438C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SplitMerge;
+			productName = SplitMerge;
+			productReference = EE2960CE238547B400CC438C /* SplitMerge.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EE2960C6238547B400CC438C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Mark Lim Pak Mun";
+				TargetAttributes = {
+					EE2960CD238547B400CC438C = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EE2960C9238547B400CC438C /* Build configuration list for PBXProject "SplitMerge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EE2960C5238547B400CC438C;
+			productRefGroup = EE2960CF238547B400CC438C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE2960CD238547B400CC438C /* SplitMerge */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EE2960CC238547B400CC438C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE2960D6238547B400CC438C /* Assets.xcassets in Resources */,
+				EE2960D9238547B400CC438C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EE2960CA238547B400CC438C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE3BBF142386494B009FE374 /* SplitViewController.swift in Sources */,
+				EEEBB900252FDA1C00A53084 /* Extensions.swift in Sources */,
+				EE3BBF0E238636A5009FE374 /* MergeWindowController.swift in Sources */,
+				EE2ADC8023893B9D008E3241 /* NSImageExtension.swift in Sources */,
+				EE2960D4238547B400CC438C /* MergeViewController.swift in Sources */,
+				EEAEC06F238741490044F1F7 /* ReadOperation.swift in Sources */,
+				EE2960D2238547B400CC438C /* AppDelegate.swift in Sources */,
+				EE33CE732386864E00429345 /* SplitWindowController.swift in Sources */,
+				EEAEC07123875E500044F1F7 /* CustomRecord.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EE2960D7238547B400CC438C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE2960D8238547B400CC438C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EE2960DB238547B400CC438C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EE2960DC238547B400CC438C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		EE2960DE238547B400CC438C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SplitMerge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "Incremental-Innovation.SplitMerge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EE2960DF238547B400CC438C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SplitMerge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "Incremental-Innovation.SplitMerge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE2960C9238547B400CC438C /* Build configuration list for PBXProject "SplitMerge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE2960DB238547B400CC438C /* Debug */,
+				EE2960DC238547B400CC438C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE2960DD238547B400CC438C /* Build configuration list for PBXNativeTarget "SplitMerge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE2960DE238547B400CC438C /* Debug */,
+				EE2960DF238547B400CC438C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EE2960C6238547B400CC438C /* Project object */;
+}
