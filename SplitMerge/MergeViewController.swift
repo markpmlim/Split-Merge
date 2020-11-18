@@ -94,7 +94,6 @@ class MergeViewController: NSViewController, NSTableViewDelegate, NSTableViewDat
         tableView.register(forDraggedTypes: registeredTypes)
 
         // No to dragging outside tableview
-        tableView.setDraggingSourceOperationMask(.copy, forLocal: true)
         // Yes to dragging within tableview
         tableView.setDraggingSourceOperationMask(.move, forLocal: true)
 

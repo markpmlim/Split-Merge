@@ -122,4 +122,10 @@ a) png, b) jpg and (c) heic
 Apple macOS (up to Catalina) does not support HEIC 16-bit format.
 
 
+System Requirements:
 
+macOS 10.13.4 or later
+
+XCode 9.x or later
+
+The project can be ported back to 10.12.x. Just remove the code to save files in HEIC format.
