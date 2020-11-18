@@ -18,6 +18,10 @@ b) merge a set of 2 or more images to produce a single larger image (in the form
 
 Currently, it cannot convert a spherical projection image to vertical/horizontal strip or 6 cubic maps. A spherical projection image (aka equirectangular projection image) is a single 2D image whose width to height resolution is 2:1.
 
+https://github.com/markpmlim/MetalCubemapping
+
+
+
 Note: To be used as a cubic map, the individual images must have a SQUARE resolution. 
 
 Important: Apple’s Core Image function will compute an image’s width or height based on a DPI of 72 dots/inch. For example, if an image’s width and height are both 2048 and its DPI is 96 dots/inch, the returned image dimensions are 1536 x 1536. The user should bear in mind this point if she/he intends to produce images that are a power of 2 in resolutions.
