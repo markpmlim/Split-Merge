@@ -90,7 +90,7 @@ class MergeViewController: NSViewController, NSTableViewDelegate, NSTableViewDat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let registeredTypes = [kPrivateTableViewData, NSFilenamesPboardType]
+        let registeredTypes = [kPrivateTableViewData, kUTTypeFileURL as String]
         tableView.register(forDraggedTypes: registeredTypes)
 
         // No to dragging outside tableview
@@ -194,9 +194,13 @@ class MergeViewController: NSViewController, NSTableViewDelegate, NSTableViewDat
         if draggingSource == nil {
             // Drag-and-drop from Finder/Desktop is handled by this branch.
             // NB. files will never be an optional if the drop has been flagged as validated.
-            let files = pboard.propertyList(forType: NSFilenamesPboardType) as! [String]
-            for path in files {
-                let url = URL(fileURLWithPath: path)
+            let acceptedTypes = [kUTTypeImage]        // an array of UTI type strings
+            let classObjects : [AnyClass] = [NSURL.self]
+            let searchOptions: [String : AnyObject] = [NSPasteboardURLReadingFileURLsOnlyKey : NSNumber(value: true as Bool),
+                                                       NSPasteboardURLReadingContentsConformToTypesKey : acceptedTypes as AnyObject]
+            let urls = pboard.readObjects(forClasses: classObjects,
+                                          options: searchOptions) as! [URL]
+            for url in urls {
                 let appDelegate = NSApp.delegate as! AppDelegate
                 // Proceed to read the graphic file on a secondary thread.
                 let readOp = ReadOperation(url: url, delegate: self)
@@ -255,7 +259,6 @@ class MergeViewController: NSViewController, NSTableViewDelegate, NSTableViewDat
     // The "Delete" button is only enabled if there are at least 1 file.
     // Multiple selected objects are not allowed.
     @IBAction func deleteAction(_ sender: Any?) {
-        //print("deleteAction")
         let selectedObjs = arrayController.selectedObjects as? [CustomRecord]
         let selectedObj = selectedObjs![0]
         arrayController.removeObject(selectedObj)
@@ -326,7 +329,7 @@ class MergeViewController: NSViewController, NSTableViewDelegate, NSTableViewDat
      The common width must be equal to common height; we assume
      the strip produced is to be used as a cube map.
      Assumes the set of original images have the same color space.
-      Additional checks:
+     Additional checks:
      Can be enforced: thecommon height (and width) must be a
      multiple of a power of 2 e.g. 128x128, 256x256, 512x512 etc.
      Uncomment the code for this check.
@@ -334,10 +337,8 @@ class MergeViewController: NSViewController, NSTableViewDelegate, NSTableViewDat
     @IBAction func mergeAction(_ sender: Any?) {
         // Call this function to merge the n sub-images.
         let numberOfImages = self.mergeRecords.count
-        //print("# of images to be merged:", numberOfImages)
         let commonHeight = Int(self.mergeRecords[0].nsImage.size.height)
         let commonWidth = Int(self.mergeRecords[0].nsImage.size.width)
-        //print(commonWidth, commonHeight)
         if commonHeight != commonWidth {
             print("The height of an image must be equal to its width")
             return
@@ -382,7 +383,7 @@ class MergeViewController: NSViewController, NSTableViewDelegate, NSTableViewDat
             self.mergedImageHeight = commonHeight * numberOfImages
         }
 
-        // The original set of CGImage to be merged into a larger image.
+        // The original set of CGImages to be merged into a larger image.
         var cgImages = [CGImage?](repeating: nil,
                                   count: numberOfImages)
         // Assumes are images are bpc=8.
@@ -408,7 +409,6 @@ class MergeViewController: NSViewController, NSTableViewDelegate, NSTableViewDat
         self.canSave = true             // Enable the "Save" button
         // Preserve the color space. We assume all images in the set has the same color space.
         self.colorSpace = cgImages[0]!.colorSpace!
-        //print("Color Space", self.colorSpace)
 
         // All images in the set have the same square resolution.
         // KIV. Images with colors that are half-floats and floats.
@@ -416,6 +416,7 @@ class MergeViewController: NSViewController, NSTableViewDelegate, NSTableViewDat
         let componentsPerPixel = cgImages[0]!.bitsPerPixel/cgImages[0]!.bitsPerComponent
         // Compute the common size of each of the original set of images.
         let bytesPerImage = cgImages[0]!.bytesPerRow * commonHeight
+        //print(bytesPerImage)
         // Encapsulate the raw bitmap data of each of the original
         // set of images as instances of CFData.
         var bitmapData = [CFData]()
@@ -443,7 +444,6 @@ class MergeViewController: NSViewController, NSTableViewDelegate, NSTableViewDat
                 // Compute the offset from the beginning of the source image.
                 // Note: all source images must be of the same width and same height.
                 let srcOffset = bytesPerRow * row
-                //let srcEndIndex = srcStartIndex + bytesPerRow
                 for i in 0..<numberOfImages {
                     destPtr.withMemoryRebound(to: UInt8.self,
                                               capacity: bytesPerRow, {
@@ -494,7 +494,6 @@ class MergeViewController: NSViewController, NSTableViewDelegate, NSTableViewDat
         let button = sp.runModal()
         if (button == NSModalResponseOK) {
             var fileExt = "jpg"
-            self.willChangeValue(forKey: "saveType")
             if self.saveType == 0 {
                 fileExt = "jpg"
             }
@@ -504,7 +503,7 @@ class MergeViewController: NSViewController, NSTableViewDelegate, NSTableViewDat
             else if self.saveType == 2 {
                 fileExt = "heic"
             }
-            self.didChangeValue(forKey: "saveType")
+
             let fileName = sp.url?.deletingPathExtension()
             let fileURL = fileName?.appendingPathExtension(fileExt)
 

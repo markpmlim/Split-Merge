@@ -31,7 +31,6 @@ class SplitViewController: NSViewController {
     // option with a mouse click/key down.
     var saveType: Int {
         get {
-            //print("Getting")
             var value: Int = 0      // default to JPG
             if self.saveFileType == kUTTypeJPEG {
                 value = 0
@@ -46,7 +45,6 @@ class SplitViewController: NSViewController {
         }
         set {
             if newValue == 0 {
-                //print("Setting")
                 self.saveFileType = kUTTypeJPEG
             }
             else if newValue == 1 {
@@ -64,12 +62,10 @@ class SplitViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     override var representedObject: Any? {
         didSet {
-            // Update the view, if already loaded.
         }
     }
 
@@ -79,7 +75,7 @@ class SplitViewController: NSViewController {
         canSave = false
         // This ensures no entries displayed in the table view
         self.splitRecords = [CustomRecord]()
-        // Make sure there are no split images
+        // Make sure there are no sub-images images
         self.cgImages = [CGImage]()
     }
 
@@ -210,7 +206,7 @@ class SplitViewController: NSViewController {
         var rawImageData = cgImage!.dataProvider!.data!
         // The strip's and its sub-images' bytes/pixel.
         let bytesPerPixel = cgImage!.bitsPerPixel/cgImage!.bitsPerComponent
-        print(cgImage!.bitsPerPixel, cgImage!.bitsPerComponent)
+        //print(cgImage!.bitsPerPixel, cgImage!.bitsPerComponent)
         // Compute the bytes/row of each sub-image's raw bitmap data.
         let bytesPerRow = bytesPerPixel * commonWidth
         //print(bytesPerPixel, bytesPerRow)
@@ -316,21 +312,25 @@ class SplitViewController: NSViewController {
             CGImageDestinationFinalize(imageDestination)
         }
     }
-    // We won't be using an instance of NSSavePanel because we only allow navigation to
-    // location of a folder.
+
+    // We won't be using an instance of NSSavePanel because we only
+    // allow navigation to the location of a folder.
     @IBAction func saveAction(_ sender: Any?) {
         //print("saveAction")
         // Defaults to the file type of the original graphic
         // We are changing the property "saveType" manually.
         // The messages willChangeValueForKey: & didChangeValueForKey:
         // must be sent to IB which will update the popup control visually.
-        self.willChangeValue(forKey: "saveType")
-        self.saveType = 0
-        if self.utType == kUTTypePNG {
-            self.saveType = 1
+        if self.utType == kUTTypeJPEG {
+            self.saveType = 0
+        }
+        else if self.saveType == 1 {
+            self.saveFileType = kUTTypePNG
+        }
+        else if self.saveType == 2 {
+            self.saveFileType = AVFileTypeHEIC as CFString
         }
         //print("Original UTI:", self.utType)
-        self.didChangeValue(forKey: "saveType")
 
         let op = NSOpenPanel()
         op.accessoryView = openAccessoryView    // Getter not called!
@@ -339,7 +339,6 @@ class SplitViewController: NSViewController {
         op.canCreateDirectories = true
         op.allowsMultipleSelection = false
         op.prompt = "Save Images"
-        //op.allowedFileTypes = ["png", "jpg", "tiff", "bmp"]
         op.allowedFileTypes = [String(kUTTypePNG),
                                String(kUTTypeJPEG),
                                AVFileTypeHEIC]
